@@ -4,7 +4,7 @@
 
 Get the current ("initial") directory that an npm script was run:
 
-```json
+```js
 // <project root>/package.json
 {
   "scripts": {

@@ -5,6 +5,7 @@
 Get the current ("initial") directory that an npm script was run:
 
 ```json
+// <project root>/package.json
 {
   "scripts": {
     "deck": "mdx-deck $INIT_CWD/index.mdx"

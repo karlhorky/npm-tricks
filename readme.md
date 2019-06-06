@@ -1,5 +1,27 @@
 # npm Script Tricks
 
+## Get directory where command was run
+
+Get the current ("initial") directory that an npm script was run:
+
+```json
+{
+  "scripts": {
+    "deck": "mdx-deck $INIT_CWD/index.mdx"
+  }
+}
+```
+
+Usage:
+
+```sh
+packages/presentation-1 $ npm run deck   # runs mdx-deck /Users/user/projects/decks/packages/presentation-1/index.mdx
+```
+
+### References
+
+Background / Discussion: https://github.com/npm/npm/issues/9374#issuecomment-339004386
+
 ## Shell Positional Parameters in npm Scripts
 
 Ever want to use Bash positional parameters / arguments / variables in npm scripts?
@@ -61,7 +83,7 @@ npm run 1 build                 # runs mdx-deck build -d default index.mdx
 npm run 1 build -d different    # runs mdx-deck build -d different index.mdx
 ```
 
-References:
+### References
 
 Tweet 1: https://mobile.twitter.com/karlhorky/status/1136577374072573952<br>
 Tweet 2: https://mobile.twitter.com/karlhorky/status/1136584417533730816<br>

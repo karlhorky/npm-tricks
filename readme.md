@@ -1,4 +1,4 @@
-# npm Script Tricks
+# npm Scripts Tricks
 
 ## Get directory where command was run
 

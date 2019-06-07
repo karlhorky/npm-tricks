@@ -1,5 +1,33 @@
 # npm Scripts Tricks
 
+## Regular expressions with sed (incl. escaping within npm scripts)
+
+If you want to use regular expressions with features like backreferences, you may consider using `sed` within your npm script. 
+
+The escaping in the regular expression is a bit weird (probably because of JSON).
+
+This example uses the `s@pattern@replace@` syntax to avoid having to escape the folder slashes.
+
+```js
+{
+  "scripts": {
+    "names": "for file in dir/*.md; do echo `echo $file | sed 's@dir/\\(.*\\)\\.md@\\1.pdf@'`; done"
+  }
+}
+```
+
+Usage:
+
+```sh
+# Files within dir:
+# dir/abc.md
+# dir/def.md
+
+npm run names
+abc.pdf
+def.pdf
+```
+
 ## Get Directory where Command was Run
 
 Get the current ("initial") directory that an npm script was run:

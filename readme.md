@@ -101,8 +101,13 @@ To loop / foreach over all files matching a pattern.
 ```js
 {
   "scripts: {
-    "build": "for file in dir/*.md; do md-to-pdf $file --config-file config.js; done"
+    "build": "for file in dir/*.md; do md-to-pdf $file; done"
   }
 }
 ```
 
+Usage:
+
+```sh
+npm run build   # will loop over all the .md files in the directory "dir" and run md-to-pdf with each
+```

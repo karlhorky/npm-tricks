@@ -1,5 +1,28 @@
 # npm Scripts Tricks
 
+## Get Directory where Command was Run
+
+Get the current ("initial") directory that an npm script was run:
+
+```js
+// <project root>/package.json
+{
+  "scripts": {
+    "deck": "mdx-deck $INIT_CWD/index.mdx"
+  }
+}
+```
+
+Usage:
+
+```sh
+packages/presentation-1 $ npm run deck   # runs mdx-deck /Users/user/projects/decks/packages/presentation-1/index.mdx
+```
+
+### References
+
+Background / Discussion: https://github.com/npm/npm/issues/9374#issuecomment-339004386
+
 ## Regular expressions with sed (incl. escaping within npm scripts)
 
 If you want to use regular expressions with features like backreferences, you may consider using `sed` within your npm script. 
@@ -27,29 +50,6 @@ npm run names
 abc.pdf
 def.pdf
 ```
-
-## Get Directory where Command was Run
-
-Get the current ("initial") directory that an npm script was run:
-
-```js
-// <project root>/package.json
-{
-  "scripts": {
-    "deck": "mdx-deck $INIT_CWD/index.mdx"
-  }
-}
-```
-
-Usage:
-
-```sh
-packages/presentation-1 $ npm run deck   # runs mdx-deck /Users/user/projects/decks/packages/presentation-1/index.mdx
-```
-
-### References
-
-Background / Discussion: https://github.com/npm/npm/issues/9374#issuecomment-339004386
 
 ## Shell Positional Parameters in npm Scripts
 

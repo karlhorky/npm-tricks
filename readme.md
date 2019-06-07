@@ -1,6 +1,6 @@
 # npm Scripts Tricks
 
-## Get directory where command was run
+## Get Directory where Command was Run
 
 Get the current ("initial") directory that an npm script was run:
 
@@ -89,3 +89,20 @@ npm run 1 build -d different    # runs mdx-deck build -d different index.mdx
 Tweet 1: https://mobile.twitter.com/karlhorky/status/1136577374072573952<br>
 Tweet 2: https://mobile.twitter.com/karlhorky/status/1136584417533730816<br>
 Background / Discussion: https://github.com/npm/npm/issues/9627#issuecomment-338752485
+
+## General Shell Tricks
+
+These tricks are not specific to npm scripts, but are also useful there.
+
+### Run a Command for All Files in a Directory
+
+To loop / foreach over all files matching a pattern.
+
+```js
+{
+  "scripts: {
+    "build": "for file in dir/*.md; do md-to-pdf $file --config-file config.js; done"
+  }
+}
+```
+

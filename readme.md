@@ -98,7 +98,7 @@ These tricks are not specific to npm scripts, but are also useful there.
 
 To loop / foreach over all files matching a pattern.
 
-```js
+```json
 {
   "scripts: {
     "build": "for file in dir/*.md; do md-to-pdf $file --config-file config.js; done"

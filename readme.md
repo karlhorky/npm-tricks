@@ -122,6 +122,28 @@ Background / Discussion: https://github.com/npm/npm/issues/9627#issuecomment-338
 
 These tricks are not specific to npm scripts, but are also useful there.
 
+### Restart a Process if it Exits
+
+If a process exits for any reason, restart it, with an optional message.
+
+```js
+{
+  "scripts": {
+    "develop": "until gatsby develop; do echo "Gatsby crashed with exit code $?. Restarting.." >&2; sleep 1; done"
+  }
+}
+```
+
+Usage:
+
+```sh
+$ npm run develop
+```
+
+### References
+
+Stack Overflow: https://stackoverflow.com/a/697064/1268612
+
 ### Run a Command for All Files in a Directory
 
 To loop / foreach over all files matching a pattern.

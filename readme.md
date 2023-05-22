@@ -51,6 +51,46 @@ abc.pdf
 def.pdf
 ```
 
+## npm Scripts: Restart a Process if it Exits
+
+If a process exits for any reason, restart it, with an optional message.
+
+```js
+{
+  "scripts": {
+    "develop": "until gatsby develop; do echo "Gatsby crashed with exit code $?. Restarting.." >&2; sleep 1; done"
+  }
+}
+```
+
+Usage:
+
+```sh
+$ npm run develop
+```
+
+### References
+
+Stack Overflow: https://stackoverflow.com/a/697064/1268612
+
+## npm Scripts: Run a Command for All Files in a Directory
+
+To loop / foreach over all files matching a pattern.
+
+```js
+{
+  "scripts: {
+    "build": "for file in dir/*.md; do md-to-pdf $file; done"
+  }
+}
+```
+
+Usage:
+
+```sh
+npm run build   # will loop over all the .md files in the directory "dir" and run md-to-pdf with each
+```
+
 ## npm Scripts: Shell Positional Parameters
 
 Ever want to use Bash positional parameters / arguments / variables in npm scripts?
@@ -117,47 +157,3 @@ npm run 1 build -d different    # runs mdx-deck build -d different index.mdx
 Tweet 1: https://mobile.twitter.com/karlhorky/status/1136577374072573952<br>
 Tweet 2: https://mobile.twitter.com/karlhorky/status/1136584417533730816<br>
 Background / Discussion: https://github.com/npm/npm/issues/9627#issuecomment-338752485
-
-## npm Scripts: General Shell Tricks
-
-These tricks are not specific to npm scripts, but are also useful there.
-
-### Restart a Process if it Exits
-
-If a process exits for any reason, restart it, with an optional message.
-
-```js
-{
-  "scripts": {
-    "develop": "until gatsby develop; do echo "Gatsby crashed with exit code $?. Restarting.." >&2; sleep 1; done"
-  }
-}
-```
-
-Usage:
-
-```sh
-$ npm run develop
-```
-
-### References
-
-Stack Overflow: https://stackoverflow.com/a/697064/1268612
-
-### Run a Command for All Files in a Directory
-
-To loop / foreach over all files matching a pattern.
-
-```js
-{
-  "scripts: {
-    "build": "for file in dir/*.md; do md-to-pdf $file; done"
-  }
-}
-```
-
-Usage:
-
-```sh
-npm run build   # will loop over all the .md files in the directory "dir" and run md-to-pdf with each
-```

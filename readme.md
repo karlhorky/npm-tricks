@@ -1,6 +1,6 @@
-# npm Scripts Tricks
+# npm Tricks
 
-## Get Directory where Command was Run
+## npm Scripts: Get Directory where Command was Run
 
 Get the current ("initial") directory that an npm script was run:
 
@@ -23,7 +23,7 @@ packages/presentation-1 $ npm run deck   # runs mdx-deck /Users/user/projects/de
 
 Background / Discussion: https://github.com/npm/npm/issues/9374#issuecomment-339004386
 
-## Regular expressions with sed (incl. escaping within npm scripts)
+## npm Scripts: Regular expressions with sed
 
 If you want to use regular expressions with features like backreferences, you may consider using `sed` within your npm script. 
 
@@ -51,7 +51,7 @@ abc.pdf
 def.pdf
 ```
 
-## Shell Positional Parameters in npm Scripts
+## npm Scripts: Shell Positional Parameters
 
 Ever want to use Bash positional parameters / arguments / variables in npm scripts?
 
@@ -118,7 +118,7 @@ Tweet 1: https://mobile.twitter.com/karlhorky/status/1136577374072573952<br>
 Tweet 2: https://mobile.twitter.com/karlhorky/status/1136584417533730816<br>
 Background / Discussion: https://github.com/npm/npm/issues/9627#issuecomment-338752485
 
-## General Shell Tricks
+## npm Scripts: General Shell Tricks
 
 These tricks are not specific to npm scripts, but are also useful there.
 

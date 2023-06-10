@@ -1,5 +1,7 @@
 # npm Tricks
 
+A collection of useful npm scripts tricks
+
 ## npm Scripts: Get Directory where Command was Run
 
 Get the current ("initial") directory that an npm script was run:
